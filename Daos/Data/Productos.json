@@ -1,0 +1,22 @@
+[
+  {
+    "id": 5,
+    "titulo": "Prs Multifoil",
+    "descripcion": "Guitarra Electrica",
+    "precio": 5000,
+    "code": "abc005",
+    "thumbnail": "wwww.cpom",
+    "stock": 50,
+    "status": true
+  },
+  {
+    "id": 2,
+    "titulo": "fender starcaster",
+    "descripcion": "guitarra electrica",
+    "precio": 1500,
+    "code": "abc002",
+    "thumbnail": "wwww.xxxxx.com//jjjj.jpg",
+    "stock": 50,
+    "status": true
+  }
+]

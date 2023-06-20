@@ -1,0 +1,57 @@
+<div class="card border border-dark border-3 rounded bg-success">
+  <div class="card-body">
+    <h1 class="text-light text-center">Chat</h1>
+  </div>
+</div>
+
+<br>
+
+<div class="card border border-dark border-3 rounded">
+  <div class="card-body">
+    <form id="chatForm" class="h-2 p-5" method="post" name="chat">
+
+      <div class="form-group ">
+        <label for="usuario"><b>usuario</b></label>
+        <input type="text" placeholder="usuario" id="usuario" name="usuario" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="mensaje"><b>mensaje</b></label>
+        <input type="text" placeholder="Hola!" id="mensaje" name="mensaje" class="form-control">
+      </div>
+
+      <button class="btn btn-success mt-4">Agregar</button>
+
+    </form>
+    <br>
+  </div>
+</div>
+<div class="entry mt-4">
+    {{#if chat}}
+    <div class="  p-1 border border-dark border-3 rounded">
+        <table class="  table table-resposive ">
+            <thead class="thead-dark text-light bg-primary">
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Precio</th>
+                </tr>
+            </thead>
+            <tbody id="chatDisplay">
+                {{#each chat}}
+                <tr class="table">
+                    <th>{{ this.id }}</th>
+                    <td>{{ this.usuario }}</td>
+                    <td>{{ this.mensaje}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        {{else}}
+        <br>
+        <h3> No hay ningún producto agregado. </h3>
+        {{/if}}
+    </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/Chatlogic.js"></script>

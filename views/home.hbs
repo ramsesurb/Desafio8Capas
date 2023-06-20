@@ -1,0 +1,62 @@
+<div class="card bg-primary border border-dark border-3 rounded mt-4">
+    <div class="card-body">
+        <h1 class="text-center text-light">Productos</h1>
+    </div>
+</div>
+ <br>
+<div class="card border border-dark border-3 rounded">
+    <div class="card-body">
+    <h1>Bienvenido!</h1>
+    <p>{{user.name}}</p>
+    <p>{{user.email}}</p>
+    <p>{{user.age}}</p>
+    <p>Rol:{{user.rol}}</p>
+    
+
+   
+    <a href="/api/session/logout" class="btn btn-primary">Salir</a>
+    
+    </div>
+</div>
+ <div class="row container  mt-4 justify-content-center">
+    {{#if productos}}
+     {{#each productos}}
+
+<div id="prodDisplay" class="card col-sm-6 mb-3 mb-sm-0 m-4 ms-4 " style="width: 18rem;">
+  <img src="{{ this.thumbnail }}" width="50" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ this.titulo }}</h5>
+    <h5 class="card-text" > ${{ this.precio }} </h5>
+    <p class="card-text">{{ this.descripcion }}</p>
+    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+  </div>
+</div>
+ {{/each}}
+
+</div>
+{{else}}
+<div>
+    <br>
+        <h3> No hay ningún producto agregado. </h3>
+        {{/if}}
+
+     <div class=" row width  m-4 justify-content-center ">  
+
+     
+
+    {{#if hasPrevPage}}
+    <a href="/prods/?page={{prevPage}}" class=" col btn btn-primary">Anterior</a>
+    {{/if}}
+    {{#if hasNextPage}}
+    <a href="/prods/?page={{nextPage}}" class=" col btn btn-primary">Siguiente</a>
+    {{/if}}
+     
+</div>
+   
+   
+  
+
+</div>
+        
+
+
